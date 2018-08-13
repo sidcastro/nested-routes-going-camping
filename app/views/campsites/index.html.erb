@@ -3,7 +3,7 @@
 <ul>
   <% @campsites.each do |campsite| %>
     <li>
-      <%= campsite.name %>
+      <%= link_to campsite.name, campsite_campers_path(campsite) %>
     </li>
   <% end %>
 </ul>
