@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :campers, only: [:index, :show] do
     resources :supplies, only: [:index]
   end
+
+  namespace :api do # api: the controller is returning a JSON
+    namespace :v1 do # v1: version control, version 1
+      resources :campers, only: [:index]
+    end
+  end
 end
